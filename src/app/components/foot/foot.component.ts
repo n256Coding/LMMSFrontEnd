@@ -1,4 +1,4 @@
-import { HeroService } from './../hero.service';
+import { HeroService } from '../../services/hero.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,14 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FootComponent implements OnInit {
 
-  constructor(private heroService:HeroService) { }
+  constructor(private heroService: HeroService) { }
 
   ngOnInit() {
-    this.heroService.getPosts().subscribe(
-      posts => {
-        console.log(posts);
-      }
-    )
+    // this.heroService.getPosts().subscribe(
+    //   posts => {
+    //     console.log(posts);
+    //   }
+    // );
   }
 
 }

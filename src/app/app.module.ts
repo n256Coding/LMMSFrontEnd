@@ -1,24 +1,27 @@
-import { HeroService } from './hero.service';
+import { DataService } from './services/data.service';
+import { TextResourceService } from './services/text-resource.service';
+import { HeroService } from './services/hero.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+import { InMemoryDataService } from '../app/in-memory-data.service';
 import { BarRatingModule } from 'ngx-bar-rating';
- 
+import { FormsModule } from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
-import { HeadComponent } from './head/head.component';
-import { FootComponent } from './foot/foot.component';
+import { HeadComponent } from './components/head/head.component';
+import { FootComponent } from './components/foot/foot.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from './message.service';
 import { AppRoutingModule } from './/app-routing.module';
-import { TextComponent } from './text/text.component';
-import { VideoComponent } from './video/video.component';
-import { MoodleComponent } from './moodle/moodle.component';
-import { SlideComponent } from './slide/slide.component';
-import { TextResultComponent } from './text-result/text-result.component';
-import { TextRequestComponent } from './text-request/text-request.component';
+import { TextComponent } from './components/text/text.component';
+import { VideoComponent } from './components/video/video.component';
+import { MoodleComponent } from './components/moodle/moodle.component';
+import { SlideComponent } from './components/slide/slide.component';
+import { TextResultComponent } from './components/text-result/text-result.component';
+import { TextRequestComponent } from './components/text-request/text-request.component';
 
 
 @NgModule({
@@ -39,13 +42,14 @@ import { TextRequestComponent } from './text-request/text-request.component';
     HttpClientInMemoryWebApiModule,
     HttpClientModule,
     AppRoutingModule,
-    BarRatingModule
+    BarRatingModule,
+    FormsModule
 
     // HttpClientInMemoryWebApiModule.forRoot(
     //   InMemoryDataService, { dataEncapsulation : false }
     // )
   ],
-  providers: [MessageService, HeroService],
+  providers: [MessageService, HeroService, TextResourceService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

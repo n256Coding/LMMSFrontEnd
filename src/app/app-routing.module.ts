@@ -1,10 +1,10 @@
-import { SlideComponent } from './slide/slide.component';
-import { MoodleComponent } from './moodle/moodle.component';
-import { VideoComponent } from './video/video.component';
-import { TextComponent } from './text/text.component';
+import { SlideComponent } from './components/slide/slide.component';
+import { MoodleComponent } from './components/moodle/moodle.component';
+import { VideoComponent } from './components/video/video.component';
+import { TextComponent } from './components/text/text.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TextRequestComponent } from './text-request/text-request.component';
+import { TextRequestComponent } from './components/text-request/text-request.component';
 
 const routes: Routes = [
   { path : '', redirectTo : '/text-request', pathMatch : 'full' },
